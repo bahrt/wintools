@@ -1,0 +1,14 @@
+{
+  "name": "bahrt-wintools",
+  "version": "0.1.0",
+  "author": "bahrt",
+  "summary": "A module to install the most common admin tools on Windows",
+  "license": "Apache-2.0",
+  "source": "https://github.com/bahrt/wintools",
+  "project_page": "https://github.com/bahrt/wintools",
+  "issues_url": "https://github.com/bahrt/wintools/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
