@@ -47,9 +47,14 @@ class wintools (
 )
 {
   if $::kernel == windows {
-    package { ['chocolatey','7zip','baretail','sysinternals','procexp','notepadplusplus']:
-      ensure => latest,
-      install_options => ['-installArgs','"/INSTALLDIR=""${installdir}"'],
+    package { ['chocolatey':
+        ensure => latest,
+    }
+
+    package { ['7zip','baretail','procexp','notepadplusplus']:
+      require         => Package['chocolatey'],
+      ensure          => latest,
+      install_options => ['-installArgs',"/INSTALLDIR=''${installdir}'' "],
     }
   }
 }
