@@ -15,9 +15,9 @@
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+Puppet module for installing the basic and most common Windows admin tools
+out there, like Notepad++, sysinternals, baretail, etc.
+Requires Chocolatey for packages installation.
 
 ## Module Description
 
