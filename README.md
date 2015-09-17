@@ -7,7 +7,6 @@
 3. [Setup - The basics of getting started with wintools](#setup)
     * [What wintools affects](#what-wintools-affects)
     * [Setup requirements](#setup-requirements)
-    * [Beginning with wintools](#beginning-with-wintools)
 4. [Usage - Configuration options and additional functionality](#usage)
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
@@ -16,64 +15,45 @@
 ## Overview
 
 Puppet module for installing the basic and most common Windows admin tools
-out there, like Notepad++, sysinternals, baretail, etc.
-Requires Chocolatey for packages installation.
+
 
 ## Module Description
 
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
-
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
+Installs Windows admin tools like Notepad++, Process Explorer, Baretail, etc.
+Relies on Chocolatey for package management so can be extended to any Chocolatey
+supported package.
 
 ## Setup
 
 ### What wintools affects
 
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
+Currently installs:
+  - 7-zip
+  - Notepad++
+  - Process Explorer
+  - Baretail
 
-### Setup Requirements **OPTIONAL**
+### Setup Requirements
 
-If your module requires anything extra before setting up (pluginsync enabled,
-etc.), mention it here.
-
-### Beginning with wintools
-
-The very basic steps needed for a user to get the module up and running.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+Chocolatey needs to be present on the system for wintools to run.
 
 ## Usage
 
-Put the classes, types, and resources for customizing, configuring, and doing
-the fancy stuff with your module here.
+Takes install_dir as variable but still not working correctly for all pkgs.
+Binaries are installed in CHOCO_BASE_DIR\\bin.
+You can add more packages by adding them to init.pp. On future releases this
+will be parametrized.
 
 ## Reference
 
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
+For a list of Choco supported packages refer to https://chocolatey.org/packages
 
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+Tested on Windows 2008 R2 and 2012, both 64 bits.
 
 ## Development
 
-Since your module is awesome, other users will want to play with it. Let them
-know what the ground rules for contributing are.
+If you use or know of any other useful gadget and want to have it added to the
+default module, just let me know. Bugs and feedback are welcome.
 
-## Release Notes/Contributors/Etc **Optional**
-
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You may also add any additional sections you feel are
-necessary or important to include here. Please use the `## ` header.
