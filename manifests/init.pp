@@ -43,18 +43,15 @@
 # Copyright 2015 Sebastian Jeremias
 #
 class wintools (
-          $install_dir = "D:\tools"
+          $install_dir = "C:\tools"
 )
 {
   if $::kernel == windows {
-    package { ['chocolatey']:
-        ensure => latest,
-    }
-
     package { ['7zip','baretail','procexp','notepadplusplus']:
-      require         => Package['chocolatey'],
-      ensure          => latest,
-      #      install_options => ['-installArgs','"/INSTALLDIR=""${installdir}""'],
+      #require          => Package['chocolatey'],
+      ensure           => latest,
+      provider         => chocolatey,
+      #install_options => ['-installArgs','"/INSTALLDIR=""${installdir}""'],
     }
   }
 }
